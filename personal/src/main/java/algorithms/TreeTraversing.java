@@ -32,7 +32,7 @@ public class TreeTraversing {
         Deque<Node> visited = new LinkedList<>();
 
         final Node root = binaryTree.getRoot();
-        visited.addLast(root);
+        visited.push(root);
 
         traversingByBFS(visited, traces);
 
@@ -56,9 +56,7 @@ public class TreeTraversing {
     }
 
     private void traversingByBFS(Deque<Node> layers, List<Integer> traces) {
-        if (layers.isEmpty()) {
-            return;
-        } else {
+        if (!layers.isEmpty()) {
 
             final Node node = layers.pollFirst();
 
@@ -79,14 +77,11 @@ public class TreeTraversing {
     }
 
     private void traversingByDFS(Deque<Node> layers, List<Integer> traces) {
-        if (layers.isEmpty()) {
-            return;
-        } else {
+        if (!layers.isEmpty()) {
 
             final Node node = layers.pollFirst();
 
             traces.add(node.getKey());
-            System.out.println(node.getKey());
 
             final Node right = node.getRight();
             if (nonNull(right)) {
@@ -97,7 +92,6 @@ public class TreeTraversing {
             if (nonNull(left)) {
                 layers.addFirst(left);
             }
-
 
             traversingByDFS(layers, traces);
         }
