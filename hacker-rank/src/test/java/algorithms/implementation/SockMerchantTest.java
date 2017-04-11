@@ -10,7 +10,7 @@ public class SockMerchantTest {
 
     @Test
     public void testNumberOfPairs() throws Exception {
-//        assertThat(numberOfPairs(new int[]{10, 20, 20, 10, 10, 30, 50, 10, 20}, 9), is(3));
+        assertThat(numberOfPairs(new int[]{10, 20, 20, 10, 10, 30, 50, 10, 20}, 9), is(3));
         assertThat(numberOfPairs(new int[]{44, 55, 11, 15, 4, 72, 26, 91, 80, 14, 43, 78
                 , 70, 75, 36, 83, 78, 91, 17, 17, 54, 65, 60, 21, 58, 98, 87, 45, 75, 97, 81, 18
                 , 51, 43, 84, 54, 66, 10, 44, 45, 23, 38, 22, 44, 65, 9, 78, 42, 100, 94, 58, 5
