@@ -1,4 +1,4 @@
-package ccic.stacks;
+package ccic.ds.stacks;
 
 import org.junit.Test;
 

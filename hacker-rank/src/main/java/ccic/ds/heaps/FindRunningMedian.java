@@ -1,4 +1,4 @@
-package ccic.heaps;
+package ccic.ds.heaps;
 
 import java.util.Scanner;
 

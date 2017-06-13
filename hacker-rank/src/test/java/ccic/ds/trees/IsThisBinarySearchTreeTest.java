@@ -1,4 +1,4 @@
-package ccic.trees;
+package ccic.ds.trees;
 
 import org.junit.Before;
 import org.junit.Test;

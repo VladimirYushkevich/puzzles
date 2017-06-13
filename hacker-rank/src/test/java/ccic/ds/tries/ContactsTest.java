@@ -1,9 +1,9 @@
-package ccic.tries;
+package ccic.ds.tries;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static ccic.tries.Contacts.*;
+import static ccic.ds.tries.Contacts.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
