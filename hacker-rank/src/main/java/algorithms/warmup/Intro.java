@@ -16,6 +16,7 @@ public class Intro {
         b = in.nextInt();
         int sum;
         sum = solveMeFirst(a, b);
+
         System.out.println(sum);
     }
 }
