@@ -1,5 +1,6 @@
-package algorithms.warmup;
+package algorithms.strings;
 
+import algorithms.strings.BuildAPalindrome;
 import commons.BaseTest;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static algorithms.warmup.BuildAPalindrome.solution;
+import static algorithms.strings.BuildAPalindrome.solution;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertArrayEquals;
@@ -19,10 +20,10 @@ public class BuildAPalindromeTest extends BaseTest {
 
     @Test
     public void buildAPalindromeTest() {
-//        assertThat(solution("zban", "anat"), is("anana"));
-//        assertThat(solution("cban", "anad"), is("anana"));
-//        assertThat(solution("uuvepr", "riyfwsts"), is("rr"));
-//        assertThat(solution("xabcy", "zcbat"), is("abcycba"));
+        assertThat(solution("zban", "anat"), is("anana"));
+        assertThat(solution("cban", "anad"), is("anana"));
+        assertThat(solution("uuvepr", "riyfwsts"), is("rr"));
+        assertThat(solution("xabcy", "zcbat"), is("abcycba"));
         assertThat(solution("qquhuwqhdswxxrxuzzfhkplwunfagppcoildagktgdarveusjuqfistulgbglwmfgzrnyxryetwzhlnfewczmnoozlqatugmd",
                 "jwgzcfabbkoxyjxkatjmpprswkdkobdagwdwxsufeesrvncbszcepigpbzuzoootorzfskcwbqorvw "), is("oozlzoo"));
     }
