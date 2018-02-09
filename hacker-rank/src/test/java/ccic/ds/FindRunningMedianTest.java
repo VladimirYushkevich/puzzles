@@ -1,4 +1,4 @@
-package ccic.ds.heaps;
+package ccic.ds;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,12 +12,12 @@ public class FindRunningMedianTest {
     private FindRunningMedian.BinaryHeap heap;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         heap = new FindRunningMedian.BinaryHeap(6);
     }
 
     @Test
-    public void testAdd() throws Exception {
+    public void testAdd() {
         heap.add(12);
         assertThat(heap.items[0], is(12));
 

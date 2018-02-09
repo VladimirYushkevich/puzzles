@@ -1,6 +1,5 @@
 package algorithms.strings;
 
-import algorithms.strings.BuildAPalindrome;
 import commons.BaseTest;
 import org.junit.Test;
 

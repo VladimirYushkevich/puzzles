@@ -1,9 +1,11 @@
-package ccic.ds.tries;
+package ccic.ds;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static ccic.ds.tries.Contacts.*;
+import java.util.Objects;
+
+import static ccic.ds.Contacts.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
@@ -12,7 +14,7 @@ public class ContactsTest {
     private Contacts.Node root;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         root = new Contacts.Node();
         insert(root, "any");
         insert(root, "answer");
@@ -22,7 +24,7 @@ public class ContactsTest {
     }
 
     @Test
-    public void testInsert() throws Exception {
+    public void testInsert() {
         assertTrue(root.children.get('a').isLeaf);
         assertFalse(root.children.get('a').children.get('n').isLeaf);
         assertTrue(root.children.get('a').children.get('n').children.get('y').isLeaf);
@@ -37,15 +39,15 @@ public class ContactsTest {
     }
 
     @Test
-    public void testSearch() throws Exception {
-        assertTrue(getLastChild(root, "a").isLeaf);
-        assertTrue(getLastChild(root, "any").isLeaf);
-        assertTrue(getLastChild(root, "answer").isLeaf);
-        assertFalse(getLastChild(root, "an").isLeaf);
+    public void testSearch() {
+        assertTrue(Objects.requireNonNull(getLastChild(root, "a")).isLeaf);
+        assertTrue(Objects.requireNonNull(getLastChild(root, "any")).isLeaf);
+        assertTrue(Objects.requireNonNull(getLastChild(root, "answer")).isLeaf);
+        assertFalse(Objects.requireNonNull(getLastChild(root, "an")).isLeaf);
     }
 
     @Test
-    public void testGetNumberOfPartialWords() throws Exception {
+    public void testGetNumberOfPartialWords() {
         root = new Contacts.Node();
         insert(root, "hack");
         insert(root, "hackerrank");

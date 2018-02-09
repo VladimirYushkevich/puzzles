@@ -1,4 +1,4 @@
-package ccic.ds.tries;
+package ccic.ds;
 
 import java.util.HashMap;
 import java.util.Map;

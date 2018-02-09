@@ -1,4 +1,4 @@
-package ccic.ds.trees;
+package ccic.ds;
 
 import lombok.AllArgsConstructor;
 

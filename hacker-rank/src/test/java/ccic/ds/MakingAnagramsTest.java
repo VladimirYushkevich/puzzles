@@ -1,4 +1,4 @@
-package ccic.ds.strings;
+package ccic.ds;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 public class MakingAnagramsTest {
 
     @Test
-    public void testNumberNeeded() throws Exception {
+    public void testNumberNeeded() {
         assertThat(MakingAnagrams.numberNeeded("cde", "abc"), is(4));
         assertThat(MakingAnagrams.numberNeeded("cd", "ab"), is(4));
         assertThat(MakingAnagrams.numberNeeded("cd", "adc"), is(1));

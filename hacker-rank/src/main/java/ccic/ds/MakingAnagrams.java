@@ -1,4 +1,4 @@
-package ccic.ds.strings;
+package ccic.ds;
 
 import java.util.Scanner;
 
