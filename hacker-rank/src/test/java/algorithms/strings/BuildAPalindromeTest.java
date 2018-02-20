@@ -3,11 +3,7 @@ package algorithms.strings;
 import commons.BaseTest;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import static algorithms.strings.BuildAPalindrome.solution;
@@ -16,6 +12,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 
 public class BuildAPalindromeTest extends BaseTest {
+
+    private static final String PATH = "algorithms/strings/palindrome";
 
     @Test
     public void buildAPalindromeTest() {
@@ -56,8 +54,8 @@ public class BuildAPalindromeTest extends BaseTest {
     }
 
     private void runTestCase(int id) throws IOException {
-        List<String> inputs = getParameters(getFile("input", id));
-        List<String> outputs = getParameters(getFile("output", id));
+        List<String> inputs = getParameters(PATH, "input", id);
+        List<String> outputs = getParameters(PATH, "output", id);
 
         long start = System.currentTimeMillis();
 
@@ -68,24 +66,7 @@ public class BuildAPalindromeTest extends BaseTest {
             pairIndex = pairIndex + 2;
         }
 
-        System.out.println(String.format("Test Case [%s] finished after [%s] s", id,
+        System.out.println(String.format("BuildAPalindromeTest Test Case [%s] finished after [%s] s", id,
                 (System.currentTimeMillis() - start) / 1000.0d));
-    }
-
-    @Override
-    protected List<String> getParameters(File file) throws IOException {
-        List<String> inputs = new ArrayList<>();
-
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line = br.readLine();
-            inputs.add(line);
-
-            while (line != null) {
-                line = br.readLine();
-                inputs.add(line);
-            }
-        }
-
-        return inputs;
     }
 }
