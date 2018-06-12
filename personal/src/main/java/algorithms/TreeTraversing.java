@@ -26,7 +26,7 @@ public class TreeTraversing {
     /**
      * Breadth-first search over the tree.
      */
-    public List<Integer> getBFS() {
+    List<Integer> getBFS() {
         List<Integer> traces = new ArrayList<>();
 
         Deque<Node> visited = new LinkedList<>();
@@ -42,7 +42,7 @@ public class TreeTraversing {
     /**
      * Depth-first search over the tree.
      */
-    public List<Integer> getDFS() {
+    List<Integer> getDFS() {
         List<Integer> traces = new ArrayList<>();
 
         Deque<Node> visited = new LinkedList<>();
@@ -55,45 +55,47 @@ public class TreeTraversing {
         return traces;
     }
 
-    private void traversingByBFS(Deque<Node> layers, List<Integer> traces) {
-        if (!layers.isEmpty()) {
+    private void traversingByBFS(Deque<Node> visited, List<Integer> traces) {
+        if (!visited.isEmpty()) {
 
-            final Node node = layers.pollFirst();
+            final Node node = visited.pollFirst();
 
+            assert node != null;
             traces.add(node.getKey());
 
             final Node left = node.getLeft();
             if (nonNull(left)) {
-                layers.addLast(left);
+                visited.addLast(left);
             }
 
             final Node right = node.getRight();
             if (nonNull(right)) {
-                layers.addLast(right);
+                visited.addLast(right);
             }
 
-            traversingByBFS(layers, traces);
+            traversingByBFS(visited, traces);
         }
     }
 
-    private void traversingByDFS(Deque<Node> layers, List<Integer> traces) {
-        if (!layers.isEmpty()) {
+    private void traversingByDFS(Deque<Node> visited, List<Integer> traces) {
+        if (!visited.isEmpty()) {
 
-            final Node node = layers.pollFirst();
+            final Node node = visited.pollFirst();
 
+            assert node != null;
             traces.add(node.getKey());
 
             final Node right = node.getRight();
             if (nonNull(right)) {
-                layers.addFirst(right);
+                visited.addFirst(right);
             }
 
             final Node left = node.getLeft();
             if (nonNull(left)) {
-                layers.addFirst(left);
+                visited.addFirst(left);
             }
 
-            traversingByDFS(layers, traces);
+            traversingByDFS(visited, traces);
         }
     }
 
@@ -101,7 +103,7 @@ public class TreeTraversing {
     @Setter
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class BinaryTree {
+    static class BinaryTree {
         private Node root;
     }
 

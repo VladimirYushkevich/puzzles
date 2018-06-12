@@ -19,7 +19,7 @@ public class TreeTraversingTest {
      * 3 5 6 7   layer 2
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         TreeTraversing.Node nodeLayer2_0 = new TreeTraversing.Node(3, null, null);
         TreeTraversing.Node nodeLayer2_1 = new TreeTraversing.Node(5, null, null);
@@ -35,12 +35,12 @@ public class TreeTraversingTest {
     }
 
     @Test
-    public void testGetBFS() throws Exception {
+    public void testGetBFS() {
         assertArrayEquals(treeTraversing.getBFS().toArray(), Arrays.asList(1, 2, 3, 3, 5, 6, 7).toArray());
     }
 
     @Test
-    public void testGetDFS() throws Exception {
+    public void testGetDFS()  {
         assertArrayEquals(treeTraversing.getDFS().toArray(), Arrays.asList(1, 2, 3, 5, 3, 6, 7).toArray());
     }
 }
