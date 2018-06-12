@@ -13,6 +13,7 @@ import static org.junit.Assert.assertThat;
 public class CoinChangeTest {
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testCoinChange() {
         assertThat(coinChange(4, new LinkedList(Arrays.asList(1, 2, 3)), 3, new HashMap<>()), is(4L));
         assertThat(coinChange(10, new LinkedList(Arrays.asList(2, 5, 3, 6)), 4, new HashMap<>()), is(5L));
