@@ -1,5 +1,6 @@
-package ccic.ds;
+package ccic;
 
+import ccic.ATaleOfTwoStack;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertNull;

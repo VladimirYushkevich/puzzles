@@ -1,4 +1,4 @@
-package ccic.concepts;
+package ccic;
 
 import java.util.HashMap;
 import java.util.LinkedList;

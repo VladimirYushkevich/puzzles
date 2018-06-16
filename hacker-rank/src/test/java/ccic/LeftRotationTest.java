@@ -1,5 +1,6 @@
-package ccic.ds;
+package ccic;
 
+import ccic.LeftRotation;
 import org.junit.Test;
 
 public class LeftRotationTest {

@@ -1,5 +1,6 @@
-package ccic.ds;
+package ccic;
 
+import ccic.FindRunningMedian;
 import org.junit.Before;
 import org.junit.Test;
 

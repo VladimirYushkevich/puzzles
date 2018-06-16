@@ -1,12 +1,13 @@
-package ccic.algorithms;
+package ccic;
 
+import ccic.ShortestReachInAGraph;
 import commons.BaseTest;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.*;
 
-import static ccic.algorithms.ShortestReachInAGraph.solution;
+import static ccic.ShortestReachInAGraph.solution;
 import static java.util.stream.Collectors.joining;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

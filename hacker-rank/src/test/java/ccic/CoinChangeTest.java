@@ -1,4 +1,4 @@
-package ccic.concepts;
+package ccic;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-import static ccic.concepts.CoinChange.coinChange;
+import static ccic.CoinChange.coinChange;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 

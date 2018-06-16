@@ -1,4 +1,4 @@
-package ccic.algorithms;
+package ccic;
 
 import java.util.*;
 
@@ -14,11 +14,10 @@ public class ShortestReachInAGraph {
         }
     }
 
-    public static class Graph {
+    static class Graph {
         private int weight;
         private Map<Integer, List<Integer>> adj;
         private boolean[] marked;  // marked[v] = is there an s->v path?
-        private int[] edgeTo;      // edgeTo[v] = last edge on shortest s->v path
         private int[] distTo;      // distTo[v] = length of shortest s->v path
 
         Graph(int size, int weight) {
@@ -34,13 +33,11 @@ public class ShortestReachInAGraph {
             int length = adj.size();
             marked = new boolean[length];
             distTo = new int[length];
-            edgeTo = new int[length];
             traversal.add(s);
             while (!traversal.isEmpty()) {
                 int v = traversal.poll();
                 for (int w : adj.get(v)) {
                     if (!marked[w]) {
-                        edgeTo[w] = v;
                         distTo[w] = distTo[v] + 1;
                         marked[w] = true;
                         traversal.add(w);
