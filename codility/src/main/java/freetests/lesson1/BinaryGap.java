@@ -32,18 +32,17 @@ public class BinaryGap {
     public int solution(int N) {
         String input = Integer.toBinaryString(N);
         int countCurrent = 0;
-        int countLast = 0;
         int binaryGap = 0;
         for (int i = 0; i < input.length(); i++) {
-            if(Character.getNumericValue(input.charAt(i)) == 0) {
+            if (Character.getNumericValue(input.charAt(i)) == 0) {
                 countCurrent++;
             } else {
-                binaryGap = countLast;
+                if (countCurrent > binaryGap) {
+                    binaryGap = countCurrent;
+                }
                 countCurrent = 0;
             }
-            if(countCurrent > countLast) {
-                countLast = countCurrent;
-            }
+
         }
         return binaryGap;
     }

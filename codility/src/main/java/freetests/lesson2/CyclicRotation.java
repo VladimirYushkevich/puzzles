@@ -23,21 +23,22 @@ package freetests.lesson2;
 public class CyclicRotation {
 
     public int[] solution(int[] A, int K) {
-        int[] swap = new int[A.length];
+        final int length = A.length;
+        int[] swap = new int[length];
 
-        if(A.length == 0) {
+        if (length == 0) {
             return A;
         }
 
-        while (K > A.length) {
-            K = K <= A.length ? K : K - A.length;
+        if (K > length) {
+            K = K % length;
         }
 
-        for (int i = 0; i < A.length; i++) {
-            if (i + K < A.length) {
+        for (int i = 0; i < length; i++) {
+            if (i + K < length) {
                 swap[i + K] = A[i];
             } else {
-                swap[i + K - A.length] = A[i];
+                swap[i + K - length] = A[i];
             }
         }
 
