@@ -23,19 +23,35 @@ public class BSTTest {
     private BST bst;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         bst = new BST();
     }
 
     @Test
-    public void testBst() throws Exception {
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 2, 4), is(3));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 1, 4), is(2));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 4, 2), is(3));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 2, 6), is(4));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 4, 6), is(3));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 6), is(2));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 8), is(-1));
-       assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 8, 6), is(-1));
+    public void testBst() {
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 2, 4), is(3));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 1, 4), is(2));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 4, 2), is(3));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 2, 6), is(4));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 4, 6), is(3));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 6), is(2));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 8), is(-1));
+        assertThat(bst.bstDistance(new int[]{5, 6, 3, 1, 2, 4}, 6, 8, 6), is(-1));
+    }
+
+    @Test
+    public void testBstWithGraph() throws Exception {
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 2, 4), is(3));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 1, 4), is(2));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 4, 2), is(3));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 2, 6), is(4));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 4, 6), is(3));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 6), is(2));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 8), is(-1));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 3, 7), is(-1));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 8, 6), is(-1));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 7, 6), is(-1));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 6, 6), is(0));
+        assertThat(bst.bstDistanceWithGraph(new int[]{5, 6, 3, 1, 2, 4}, 6, 6, 2), is(4));
     }
 }
