@@ -1,4 +1,4 @@
-package ccic;
+package cci;
 
 import java.util.LinkedList;
 import java.util.Scanner;

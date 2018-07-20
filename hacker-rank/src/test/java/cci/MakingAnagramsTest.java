@@ -1,6 +1,5 @@
-package ccic;
+package cci;
 
-import ccic.MakingAnagrams;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

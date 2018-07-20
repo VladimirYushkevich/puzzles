@@ -1,13 +1,12 @@
-package ccic;
+package cci;
 
-import ccic.ShortestReachInAGraph;
 import commons.BaseTest;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.*;
 
-import static ccic.ShortestReachInAGraph.solution;
+import static cci.ShortestReachInAGraph.solution;
 import static java.util.stream.Collectors.joining;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -15,7 +14,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class ShortestReachInAGraphTest extends BaseTest {
 
-    private static final String PATH = "ccic/algorithms/graph";
+    private static final String PATH = "cci/algorithms/graph";
 
     /**
      * Example

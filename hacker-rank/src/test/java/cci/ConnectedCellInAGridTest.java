@@ -1,8 +1,8 @@
-package ccic;
+package cci;
 
 import org.junit.Test;
 
-import static ccic.ConnectedCellInAGrid.maxRegion;
+import static cci.ConnectedCellInAGrid.maxRegion;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 

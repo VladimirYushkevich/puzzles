@@ -1,6 +1,5 @@
-package ccic;
+package cci;
 
-import ccic.IsThisBinarySearchTree;
 import org.junit.Before;
 import org.junit.Test;
 

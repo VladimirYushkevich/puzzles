@@ -1,8 +1,8 @@
-package ccic;
+package cci;
 
 import org.junit.Test;
 
-import static ccic.RansomNote.solve;
+import static cci.RansomNote.solve;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

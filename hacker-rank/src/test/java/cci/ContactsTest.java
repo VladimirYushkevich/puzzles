@@ -1,12 +1,11 @@
-package ccic;
+package cci;
 
-import ccic.Contacts;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Objects;
 
-import static ccic.Contacts.*;
+import static cci.Contacts.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 

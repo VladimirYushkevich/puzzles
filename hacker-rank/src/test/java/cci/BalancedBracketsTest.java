@@ -1,6 +1,5 @@
-package ccic;
+package cci;
 
-import ccic.BalancedBrackets;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

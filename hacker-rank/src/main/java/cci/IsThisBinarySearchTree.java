@@ -1,4 +1,4 @@
-package ccic;
+package cci;
 
 import lombok.AllArgsConstructor;
 

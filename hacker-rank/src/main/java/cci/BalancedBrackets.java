@@ -1,4 +1,4 @@
-package ccic;
+package cci;
 
 import java.util.Scanner;
 import java.util.Stack;

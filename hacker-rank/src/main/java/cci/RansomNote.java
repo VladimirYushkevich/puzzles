@@ -1,4 +1,4 @@
-package ccic;
+package cci;
 
 import java.util.HashMap;
 import java.util.Scanner;

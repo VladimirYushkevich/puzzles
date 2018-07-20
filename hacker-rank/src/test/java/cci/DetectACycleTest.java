@@ -1,6 +1,5 @@
-package ccic;
+package cci;
 
-import ccic.DetectACycle;
 import org.junit.Before;
 import org.junit.Test;
 
