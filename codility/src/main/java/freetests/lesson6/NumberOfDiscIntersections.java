@@ -36,25 +36,50 @@ package freetests.lesson6;
  * expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
  * <p>
  * Solution:
- *  radius      left        right
+ * radius      left        right
  * A[0] = 1     -1          1
  * A[1] = 5     -4          6
  * A[2] = 2     0           4
  * A[3] = 1     2           4
  * A[4] = 4     0           8
  * A[5] = 0     5           5
- *
+ * <p>
  * Sorted
- *
+ * <p>
  * orig:    5, 4, 2, 1, 1, 0
  * left:    -4, -1, 0, 0, 2, 5
  * right:   1, 4, 4, 5, 6, 8
- *
- *
  */
 public class NumberOfDiscIntersections {
 
     public int solution(int[] A) {
-        return 0;
+        int result = 0;
+
+        int length = A.length;
+        int[] pointsStart = new int[length];
+        int[] pointsEnd = new int[length];
+
+        for (int center = 0, lastCenter = length - 1; center < length; center++) {
+            int radius = A[center];
+            int start = center > radius ? center - radius : 0;
+            int end = lastCenter - center > radius ? center + radius : lastCenter;
+            pointsStart[start]++;
+            pointsEnd[end]++;
+        }
+
+        int t = 0;
+        for (int i = 0; i < length; i++) {
+            if (pointsStart[i] > 0) {
+                result += t * pointsStart[i];
+                result += pointsStart[i] * (pointsStart[i] - 1) / 2;
+                if (result > 10_000_000) {
+                    return -1;
+                }
+                t += pointsStart[i];
+            }
+            t -= pointsEnd[i];
+        }
+
+        return result;
     }
 }
