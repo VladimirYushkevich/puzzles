@@ -14,7 +14,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class ShortestReachInAGraphTest extends BaseTest {
 
-    private static final String PATH = "cci/algorithms/graph";
+    private static final String PATH = "cci/graph";
 
     /**
      * Example

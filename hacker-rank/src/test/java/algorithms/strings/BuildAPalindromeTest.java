@@ -63,7 +63,7 @@ public class BuildAPalindromeTest extends BaseTest {
         int pairIndex = 1;
         for (int i = 0; i < numberOfPairs; i++) {
             assertThat(solution(inputs.get(pairIndex), inputs.get(pairIndex + 1)), is(outputs.get(i)));
-            pairIndex = pairIndex + 2;
+            pairIndex += 2;
         }
 
         System.out.println(String.format("BuildAPalindromeTest Test Case [%s] finished after [%s] s", id,

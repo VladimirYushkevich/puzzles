@@ -39,5 +39,5 @@ codeCoverageReport.dependsOn {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.3'
+    gradleVersion = '5.0'
 }
