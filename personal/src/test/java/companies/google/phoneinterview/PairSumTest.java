@@ -10,7 +10,7 @@ public class PairSumTest {
     private PairSum pairSum;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         pairSum = new PairSum();
     }
 

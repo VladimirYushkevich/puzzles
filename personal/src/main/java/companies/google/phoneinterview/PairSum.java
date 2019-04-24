@@ -2,6 +2,8 @@ package companies.google.phoneinterview;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Real phone interview
@@ -22,7 +24,20 @@ class PairSum {
      * @return result
      */
     boolean test(int sum) {
-        return logarithmic(sum);
+        return linear(sum);
+    }
+
+    private boolean linear(int sum) {
+        Set<Integer> complements = new HashSet<>();
+        for (int value : addedNumbers) {
+            if (complements.contains(sum - value)) {
+                return true;
+            }
+
+            complements.add(value);
+        }
+
+        return false;
     }
 
     private boolean logarithmic(int sum) {
