@@ -1,18 +1,13 @@
 package com.yushkevich.leetcode;
 
+import java.util.LinkedList;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 public class Question {
 
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
+    public int template() {
+        return 0;
     }
 
     public static void main(String[] args) {
