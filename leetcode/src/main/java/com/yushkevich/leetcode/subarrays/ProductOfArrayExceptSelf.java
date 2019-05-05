@@ -1,4 +1,4 @@
-package com.yushkevich.leetcode.subarray;
+package com.yushkevich.leetcode.subarrays;
 
 public class ProductOfArrayExceptSelf {
 

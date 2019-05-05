@@ -3,6 +3,9 @@ package com.yushkevich.leetcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class QuestionTest {
 
     private Question testee;
@@ -13,7 +16,8 @@ public class QuestionTest {
     }
 
     @Test
-    public void maxProfit() {
+    public void template() {
+
     }
 
 }
