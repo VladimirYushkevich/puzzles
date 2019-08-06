@@ -11,6 +11,6 @@ public class SolutionTest {
 
     @Test
     public void removeElement() {
-        assertThat(testee.removeElement(new int[]{3, 2, 2, 3}, 3), is(2));
+        assertThat(testee.removeElement(new int[]{3, 2, 2, 3}, 3), is(3));
     }
 }
