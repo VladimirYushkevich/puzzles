@@ -1,7 +1,10 @@
 package algorithms.warmup;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
+
+import static java.math.RoundingMode.HALF_UP;
 
 public class PlusMinus {
 
@@ -21,9 +24,9 @@ public class PlusMinus {
         }
 
         return new String[]{
-                new BigDecimal(posCount / n).setScale(6, BigDecimal.ROUND_HALF_UP).toString(),
-                new BigDecimal(negCount / n).setScale(6, BigDecimal.ROUND_HALF_UP).toString(),
-                new BigDecimal(zeroCount / n).setScale(6, BigDecimal.ROUND_HALF_UP).toString()};
+                new BigDecimal(posCount / n).setScale(6, RoundingMode.HALF_UP).toString(),
+                new BigDecimal(negCount / n).setScale(6, RoundingMode.HALF_UP).toString(),
+                new BigDecimal(zeroCount / n).setScale(6, RoundingMode.HALF_UP).toString()};
     }
 
     public static void main(String[] args) {

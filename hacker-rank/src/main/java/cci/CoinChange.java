@@ -29,8 +29,13 @@ public class CoinChange {
             final Integer coin = coins.peek();
             final int index = size - coins.size();
             final String key = n + "-" + index;
-            return memorise.computeIfAbsent(key,
-                    k -> coinChange(n - coin, coins, size, memorise) + coinChange(n, tail, size, memorise));
+
+            Long value = memorise.get(key);
+            if (value == null) {
+                value = coinChange(n - coin, coins, size, memorise) + coinChange(n, tail, size, memorise);
+                memorise.put(key, value);
+            }
+            return value;
         } else {
             return 0;
         }

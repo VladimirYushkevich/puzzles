@@ -8,6 +8,15 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'jacoco'
 
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
     repositories {
         jcenter()
     }
@@ -28,7 +37,7 @@ task codeCoverageReport(type: JacocoReport) {
 
     reports {
         xml.enabled true
-        xml.destination "${buildDir}/reports/jacoco/report.xml"
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
         html.enabled false
         csv.enabled false
     }
@@ -36,8 +45,4 @@ task codeCoverageReport(type: JacocoReport) {
 
 codeCoverageReport.dependsOn {
     subprojects*.test
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '5.0'
 }
