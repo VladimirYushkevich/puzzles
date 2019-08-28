@@ -1,3 +1,7 @@
 dependencies {
+    compile 'org.hibernate:hibernate-validator:6.0.13.Final'
+    compile 'javax.el:javax.el-api:3.0.0'
+    compile 'org.glassfish.web:javax.el:2.2.4'
+
     testCompile 'junit:junit:4.12'
 }
