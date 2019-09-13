@@ -49,5 +49,9 @@ public class Solution2019Test {
         assertThat(solution2019.solution3(new int[]{3, 2, 4, 3}, 8, 4, 10), is(3));
         assertThat(solution2019.solution3(new int[]{2, 8, 4, 3, 2}, 7, 11, 3), is(8));
         assertThat(solution2019.solution3(new int[]{5}, 4, 0, 3), is(-1));
+        assertThat(solution2019.solution3(new int[]{2, 8, 4, 3, 2}, 0, 11, 3), is(-1));
+        assertThat(solution2019.solution3(new int[]{8, 4, 2}, 0, 11, 4), is(8));
+        assertThat(solution2019.solution3(new int[]{2, 8, 4, 3, 2}, 0, 0, 0), is(-1));
+        assertThat(solution2019.solution3(new int[]{2, 8, 4}, 2, 8, 3), is(-1));
     }
 }

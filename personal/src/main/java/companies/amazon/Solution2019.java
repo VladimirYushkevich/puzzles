@@ -2,6 +2,8 @@ package companies.amazon;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Solution2019 {
 
@@ -65,47 +67,41 @@ public class Solution2019 {
     }
 
     public int solution3(int[] A, int X, int Y, int Z) {
-        int numberOfDispensers = 3;
-        int numberOfCars = A.length;
+        Queue<Integer> dispensers = Stream.of(X, Y, Z).filter(d -> d > 0).collect(Collectors.toCollection(LinkedList::new));
+        Queue<Integer> occupied = IntStream.of(new int[dispensers.size()]).boxed().collect(Collectors.toCollection(LinkedList::new));
+        Queue<Integer> cars = Arrays.stream(A).boxed().collect(Collectors.toCollection(LinkedList::new));
 
-        Queue<Integer> occupied = new LinkedList<>(Arrays.asList(0, 0, 0));
-        Queue<Integer> dispensers = new LinkedList<>(Arrays.asList(X, Y, Z));
+        Iterator<Integer> carIterator = cars.iterator();
+        while (carIterator.hasNext() && !dispensers.isEmpty()) {
+            int capacity = carIterator.next();
 
-        for (int i = 0; i < numberOfCars; i++) {
-            int capacity = A[i];
+            if (dispensers.peek() >= capacity) {
+                carIterator.remove();
 
-            for (int j = 0; j < numberOfDispensers; j++) {
-                if (dispensers.peek() >= capacity) {
-                    if (i == numberOfCars - 1) {
-                        return occupied.peek();
-                    }
-
-                    int dispenserCapacity = dispensers.poll();
-                    dispenserCapacity -= capacity;
-                    dispensers.add(dispenserCapacity);
-
-                    int occupiedCapacity = occupied.poll();
-                    occupiedCapacity += capacity;
-                    occupied.add(occupiedCapacity);
+                if (cars.size() == 0) {
+                    return occupied.peek();
                 } else {
-                    // not enough fuel for current car
-                    if (j == numberOfDispensers - 1) {
-                        return -1;
-                    }
-
-                    //allow next car from queue
-                    if (i < numberOfCars - 1) {
-                        int next = A[i + 1];
-                        A[i + 1] = A[i];
-                        A[i] = next;
-                        i--;
-                    }
+                    // always reset to the beginning of the queue
+                    carIterator = cars.iterator();
                 }
 
-                break;
+                int dispenserCapacity = dispensers.poll();
+                dispenserCapacity -= capacity;
+                dispensers.add(dispenserCapacity);
+
+                int occupiedCapacity = occupied.poll();
+                occupiedCapacity += capacity;
+                occupied.add(occupiedCapacity);
             }
 
+            // dispenser has not enough fuel for the rest cars, remove it
+            if (!carIterator.hasNext()) {
+                dispensers.poll();
+                occupied.poll();
+                carIterator = cars.iterator();
+            }
         }
+
         return -1;
     }
 }
