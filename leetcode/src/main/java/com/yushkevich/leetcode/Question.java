@@ -1,14 +1,8 @@
 package com.yushkevich.leetcode;
 
-import java.util.LinkedList;
 import java.util.Stack;
-import java.util.stream.Collectors;
 
 public class Question {
-
-    public int template() {
-        return 0;
-    }
 
     public static void main(String[] args) {
         System.out.println(isValid("({[]})"));
