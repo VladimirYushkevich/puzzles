@@ -12,3 +12,6 @@ export JAVA_HOME="$(jenv prefix)"
 jenv local 11.0.2
 ```
 
+For multi git:
+https://gist.github.com/VladimirYushkevich/5589d1e1bfd0df4336642d134fc6624d
+
