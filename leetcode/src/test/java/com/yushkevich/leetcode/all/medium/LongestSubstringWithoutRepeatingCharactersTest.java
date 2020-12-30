@@ -1,5 +1,6 @@
-package com.yushkevich.leetcode.all;
+package com.yushkevich.leetcode.all.medium;
 
+import com.yushkevich.leetcode.all.medium.LongestSubstringWithoutRepeatingCharacters;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

@@ -1,4 +1,4 @@
-package com.yushkevich.leetcode.all;
+package com.yushkevich.leetcode.all.medium;
 
 import java.util.HashMap;
 import java.util.Map;
