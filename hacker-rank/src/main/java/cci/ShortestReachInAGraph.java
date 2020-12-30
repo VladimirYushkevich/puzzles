@@ -4,6 +4,66 @@ import java.util.*;
 
 public class ShortestReachInAGraph {
 
+    static Map<Integer, int[]> solution(int queries, int[] sizes, int[] startIds, Map<Integer, List<Edge>> edgesToQuery) {
+        Map<Integer, int[]> res = new HashMap<>();
+
+        for (int i = 0; i < queries; i++) {
+
+            // Create a graph of size i where each edge weight is 6:
+            Graph graph = new Graph(sizes[i], 6);
+
+            // read and set edges
+            for (Edge edge : edgesToQuery.get(i)) {
+                // add each edge to the graph
+                graph.addEdge(edge.from, edge.to);
+            }
+
+            // Find shortest reach from node s
+            int startId = startIds[i];
+            int[] distances = graph.shortestReach(startId);
+
+            res.put(i, distances);
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int queries = scanner.nextInt();
+        int[] sizes = new int[queries];
+        int[] startIds = new int[queries];
+        Map<Integer, List<Edge>> edgesToQuery = new HashMap<>();
+
+        for (int t = 0; t < queries; t++) {
+            sizes[t] = scanner.nextInt();
+            int m = scanner.nextInt();
+
+            List<Edge> edges = new LinkedList<>();
+            for (int i = 0; i < m; i++) {
+                int u = scanner.nextInt();
+                int v = scanner.nextInt();
+                edges.add(new Edge(u, v));
+            }
+            edgesToQuery.put(t, edges);
+
+            startIds[t] = scanner.nextInt();
+        }
+
+        scanner.close();
+
+
+        Map<Integer, int[]> solution = solution(queries, sizes, startIds, edgesToQuery);
+        for (int[] distances : solution.values()) {
+            for (int distance : distances) {
+                System.out.print(distance);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
     static class Edge {
         int from;
         int to;
@@ -70,66 +130,6 @@ public class ShortestReachInAGraph {
             }
 
             return res;
-        }
-    }
-
-    static Map<Integer, int[]> solution(int queries, int[] sizes, int[] startIds, Map<Integer, List<Edge>> edgesToQuery) {
-        Map<Integer, int[]> res = new HashMap<>();
-
-        for (int i = 0; i < queries; i++) {
-
-            // Create a graph of size i where each edge weight is 6:
-            Graph graph = new Graph(sizes[i], 6);
-
-            // read and set edges
-            for (Edge edge : edgesToQuery.get(i)) {
-                // add each edge to the graph
-                graph.addEdge(edge.from, edge.to);
-            }
-
-            // Find shortest reach from node s
-            int startId = startIds[i];
-            int[] distances = graph.shortestReach(startId);
-
-            res.put(i, distances);
-        }
-
-        return res;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int queries = scanner.nextInt();
-        int[] sizes = new int[queries];
-        int[] startIds = new int[queries];
-        Map<Integer, List<Edge>> edgesToQuery = new HashMap<>();
-
-        for (int t = 0; t < queries; t++) {
-            sizes[t] = scanner.nextInt();
-            int m = scanner.nextInt();
-
-            List<Edge> edges = new LinkedList<>();
-            for (int i = 0; i < m; i++) {
-                int u = scanner.nextInt();
-                int v = scanner.nextInt();
-                edges.add(new Edge(u, v));
-            }
-            edgesToQuery.put(t, edges);
-
-            startIds[t] = scanner.nextInt();
-        }
-
-        scanner.close();
-
-
-        Map<Integer, int[]> solution = solution(queries, sizes, startIds, edgesToQuery);
-        for (int[] distances : solution.values()) {
-            for (int distance : distances) {
-                System.out.print(distance);
-                System.out.print(" ");
-            }
-            System.out.println();
         }
     }
 }

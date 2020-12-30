@@ -12,11 +12,11 @@ public class GraphTest {
     private Graph graph;
 
     /**
-     *     2
-     *  /     \
+     * 2
+     * /     \
      * 1 - 3 - 4
-     *  \  |  /
-     *     5
+     * \  |  /
+     * 5
      */
     @Before
     public void setUp() {

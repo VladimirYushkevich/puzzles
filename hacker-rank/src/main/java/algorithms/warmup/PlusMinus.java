@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
 
-import static java.math.RoundingMode.HALF_UP;
-
 public class PlusMinus {
 
     static String[] solution(int n, int[] ar) {

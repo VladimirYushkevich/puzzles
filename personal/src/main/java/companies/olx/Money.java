@@ -13,6 +13,12 @@ public class Money {
         this.name = name;
     }
 
+    public static List<Money> addFee(List<Money> moneys, Double fee) {
+        return moneys.stream()
+                .map(m -> m.add(new Money(fee, m.getName())))
+                .collect(Collectors.toList());
+    }
+
     public Double getValue() {
         return value;
     }
@@ -32,12 +38,6 @@ public class Money {
             throw new IllegalArgumentException("Moneys with different currencies can't be added");
         }
         return new Money(this.getValue() + moneyToAdd.getValue(), this.getName());
-    }
-
-    public static List<Money> addFee(List<Money> moneys, Double fee) {
-        return moneys.stream()
-                .map(m -> m.add(new Money(fee, m.getName())))
-                .collect(Collectors.toList());
     }
 
     @Override

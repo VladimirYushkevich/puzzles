@@ -33,7 +33,7 @@ public class LoadBalancerTest {
         loadBalancer.register(new URL("http://service1.com"));
     }
 
-    @Test (expected = IllegalStateException.class)
+    @Test(expected = IllegalStateException.class)
     public void registerUniqueProviders() throws MalformedURLException {
         loadBalancer = new LoadBalancer(2, null);
         loadBalancer.register(new URL("http://service1.com"));

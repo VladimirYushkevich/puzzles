@@ -64,16 +64,6 @@ public class ConnectedCellInAGrid {
         return count;
     }
 
-    private static class Node {
-        int row;
-        int col;
-
-        Node(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
-    }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -97,5 +87,15 @@ public class ConnectedCellInAGrid {
         scanner.close();
 
         System.out.println(maxRegion(grid, n, m));
+    }
+
+    private static class Node {
+        int row;
+        int col;
+
+        Node(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
     }
 }

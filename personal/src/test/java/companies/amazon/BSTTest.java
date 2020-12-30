@@ -7,16 +7,16 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- *              5     layer 0
- *            /  \
- *           /   \
- *          3    6    layer 1
- *        /  \
- *       /   \
- *      1    4        layer 2
- *       \
- *       \
- *       2            layer 3
+ * 5     layer 0
+ * /  \
+ * /   \
+ * 3    6    layer 1
+ * /  \
+ * /   \
+ * 1    4        layer 2
+ * \
+ * \
+ * 2            layer 3
  */
 public class BSTTest {
 

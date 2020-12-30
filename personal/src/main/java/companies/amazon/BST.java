@@ -5,7 +5,7 @@ import java.util.*;
 public class BST {
 
     int bstDistanceWithGraph(int[] values, int n, int node1, int node2) {
-        if(node1 == node2) {
+        if (node1 == node2) {
             return 0;
         }
 
@@ -158,22 +158,6 @@ public class BST {
         }
     }
 
-    private class Tree {
-        Node root;
-
-        Tree(Node root) {
-            this.root = root;
-        }
-
-        Node getRoot() {
-            return this.root;
-        }
-
-        void setRoot(Node root) {
-            this.root = root;
-        }
-    }
-
     private static class Node {
         int value;
         Node left;
@@ -207,6 +191,22 @@ public class BST {
 
         void setRight(Node right) {
             this.right = right;
+        }
+    }
+
+    private class Tree {
+        Node root;
+
+        Tree(Node root) {
+            this.root = root;
+        }
+
+        Node getRoot() {
+            return this.root;
+        }
+
+        void setRoot(Node root) {
+            this.root = root;
         }
     }
 

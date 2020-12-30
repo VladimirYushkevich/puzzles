@@ -12,8 +12,8 @@ public class PartitionLabelsTest {
 
     @Test
     public void partitionLabels() {
-        assertArrayEquals(Arrays.asList(9,7,8).toArray(), testee.partitionLabels("ababcbacadefegdehijhklij").toArray());
-        assertArrayEquals(Arrays.asList(11,7,8).toArray(), testee.partitionLabels("ababcbacabcdefegdehijhklij").toArray());
-        assertArrayEquals(Arrays.asList(10,7,8).toArray(), testee.partitionLabels("ababcbacacdefegdehijhklij").toArray());
+        assertArrayEquals(Arrays.asList(9, 7, 8).toArray(), testee.partitionLabels("ababcbacadefegdehijhklij").toArray());
+        assertArrayEquals(Arrays.asList(11, 7, 8).toArray(), testee.partitionLabels("ababcbacabcdefegdehijhklij").toArray());
+        assertArrayEquals(Arrays.asList(10, 7, 8).toArray(), testee.partitionLabels("ababcbacacdefegdehijhklij").toArray());
     }
 }

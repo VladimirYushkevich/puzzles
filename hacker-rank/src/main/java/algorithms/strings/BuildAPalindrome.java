@@ -41,8 +41,8 @@ public class BuildAPalindrome {
      * @param second       the other string
      * @param manPalFirst  Array of palindromic indexes for one string
      * @param manPalSecond Array of palindromic indexes for other string
-     * in both {@code first} and {@code second}; the empty string
-     * if no such string
+     *                     in both {@code first} and {@code second}; the empty string
+     *                     if no such string
      */
     private static void findLongestPalindrome(String first, String second, int[] manPalFirst, int[] manPalSecond) {
         SuffixArray suffixFirst = new SuffixArray(first);
@@ -65,6 +65,22 @@ public class BuildAPalindrome {
         }
     }
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String[] result = new String[n];
+        for (int i = 0; i < n; i++) {
+            String first = in.next();
+            String second = in.next();
+
+            result[i] = solution(first, second);
+        }
+
+        for (String s : result) {
+            System.out.println(s);
+        }
+    }
+
     /**
      * https://algs4.cs.princeton.edu/63suffix/SuffixArray.java.html
      */
@@ -82,6 +98,19 @@ public class BuildAPalindrome {
             for (int i = 0; i < n; i++)
                 suffixes[i] = new Suffix(text, i);
             Arrays.sort(suffixes);
+        }
+
+        /**
+         * Returns the index into the original string of the <em>i</em>th smallest suffix.
+         * That is, {@code text.substring(sa.index(i))} is the <em>i</em>th smallest suffix.
+         *
+         * @param i an integer between 0 and <em>n</em>-1
+         * @return the index into the original string of the <em>i</em>th smallest suffix
+         * @throws IllegalArgumentException unless {@code 0 <= i < n}
+         */
+        int index(int i) {
+            if (i < 0 || i >= suffixes.length) throw new IllegalArgumentException();
+            return suffixes[i].index;
         }
 
         private static class Suffix implements Comparable<Suffix> {
@@ -114,19 +143,6 @@ public class BuildAPalindrome {
             public String toString() {
                 return text.substring(index);
             }
-        }
-
-        /**
-         * Returns the index into the original string of the <em>i</em>th smallest suffix.
-         * That is, {@code text.substring(sa.index(i))} is the <em>i</em>th smallest suffix.
-         *
-         * @param i an integer between 0 and <em>n</em>-1
-         * @return the index into the original string of the <em>i</em>th smallest suffix
-         * @throws IllegalArgumentException unless {@code 0 <= i < n}
-         */
-        int index(int i) {
-            if (i < 0 || i >= suffixes.length) throw new IllegalArgumentException();
-            return suffixes[i].index;
         }
     }
 
@@ -206,8 +222,8 @@ public class BuildAPalindrome {
      * http://www.leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
      */
     static class Manacher {
-        private int[] p;  // p[i] = length of longest palindromic substring of t, centered at i
         public int[] pal;  // length of palindromic substring of t, started at i
+        private int[] p;  // p[i] = length of longest palindromic substring of t, centered at i
         private String s;  // original string
         private char[] t;  // transformed string
 
@@ -265,22 +281,6 @@ public class BuildAPalindrome {
                 t[2 * i + 2] = s.charAt(i);
             }
             t[s.length() * 2 + 1] = '#';
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        String[] result = new String[n];
-        for (int i = 0; i < n; i++) {
-            String first = in.next();
-            String second = in.next();
-
-            result[i] = solution(first, second);
-        }
-
-        for (String s : result) {
-            System.out.println(s);
         }
     }
 }

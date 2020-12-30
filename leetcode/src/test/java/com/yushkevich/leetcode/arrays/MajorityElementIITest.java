@@ -2,7 +2,8 @@ package com.yushkevich.leetcode.arrays;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.assertArrayEquals;
 

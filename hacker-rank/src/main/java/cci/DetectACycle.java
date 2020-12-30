@@ -4,11 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DetectACycle {
-    class Node {
-        int data;
-        Node next;
-    }
-
     boolean hasCycle(Node head) {
         if (head == null) {
             return false;
@@ -26,5 +21,10 @@ public class DetectACycle {
         }
 
         return false;
+    }
+
+    class Node {
+        int data;
+        Node next;
     }
 }

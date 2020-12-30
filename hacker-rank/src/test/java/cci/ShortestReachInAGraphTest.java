@@ -18,20 +18,19 @@ public class ShortestReachInAGraphTest extends BaseTest {
 
     /**
      * Example
-     *
-     *           1   2 4
-     *         /  \
-     *        3 - 5
-     *         \
-     *         6
-     *
-     *      Starting: 3
-     *      1-3=>1
-     *      2-3=>0
-     *      3-4=>0
-     *      3-5=>{1,2}
-     *      3-6=>1
-     *
+     * <p>
+     * 1   2 4
+     * /  \
+     * 3 - 5
+     * \
+     * 6
+     * <p>
+     * Starting: 3
+     * 1-3=>1
+     * 2-3=>0
+     * 3-4=>0
+     * 3-5=>{1,2}
+     * 3-6=>1
      */
     @Test
     public void nameShortestReach() {

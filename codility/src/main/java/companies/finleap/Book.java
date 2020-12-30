@@ -14,6 +14,17 @@ import java.lang.annotation.Target;
 import java.time.LocalDate;
 import java.util.List;
 
+@Constraint(validatedBy = Book.BookValidator.class)
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@interface ValidBook {
+    String message() default "{validation.date.BookDateConstraint.message}";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+}
+
 @ValidBook
 public class Book {
     @NotEmpty
@@ -105,17 +116,6 @@ public class Book {
                     && !authors.contains(null);
         }
     }
-}
-
-@Constraint(validatedBy = Book.BookValidator.class)
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@interface ValidBook {
-    String message() default "{validation.date.BookDateConstraint.message}";
-
-    Class<?>[] groups() default {};
-
-    Class<? extends Payload>[] payload() default {};
 }
 
 class Chapter {

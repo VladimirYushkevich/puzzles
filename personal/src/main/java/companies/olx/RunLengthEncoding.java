@@ -1,7 +1,5 @@
 package companies.olx;
 
-import java.util.stream.Stream;
-
 public class RunLengthEncoding {
 
     static String encode(String input) {

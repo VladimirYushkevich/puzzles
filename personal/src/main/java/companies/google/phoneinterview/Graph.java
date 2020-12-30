@@ -5,15 +5,6 @@ import java.util.*;
 public class Graph {
     private Map<Integer, Node> nodeLookup = new HashMap<>();
 
-    public static class Node {
-        private int id;
-        private LinkedList<Node> adjacent = new LinkedList<>();
-
-        Node(int id) {
-            this.id = id;
-        }
-    }
-
     private Node getNode(int id) {
         Node node = nodeLookup.get(id);
         if (node == null) {
@@ -87,5 +78,14 @@ public class Graph {
         }
 
         return false;
+    }
+
+    public static class Node {
+        private int id;
+        private LinkedList<Node> adjacent = new LinkedList<>();
+
+        Node(int id) {
+            this.id = id;
+        }
     }
 }

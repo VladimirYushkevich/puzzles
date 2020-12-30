@@ -69,17 +69,17 @@ public class Solution2020 {
         String identifier;
         String tail;
 
+        public LogLine(String identifier, String tail) {
+            this.identifier = identifier;
+            this.tail = tail;
+        }
+
         @Override
         public String toString() {
             return "LogLine{" +
                     "identifier='" + identifier + '\'' +
                     ", tail='" + tail + '\'' +
                     '}';
-        }
-
-        public LogLine(String identifier, String tail) {
-            this.identifier = identifier;
-            this.tail = tail;
         }
 
         @Override

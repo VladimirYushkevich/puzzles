@@ -1,4 +1,4 @@
-package com.yushkevich.leetcode;
+package com.yushkevich.leetcode.all;
 
 public class Solution {
 

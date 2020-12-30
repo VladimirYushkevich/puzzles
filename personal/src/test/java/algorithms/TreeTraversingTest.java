@@ -12,10 +12,10 @@ public class TreeTraversingTest {
     private TreeTraversing treeTraversing;
 
     /**
-     *      1    layer 0
-     *    /  \
-     *   2   3   layer 1
-     *  /\  /\
+     * 1    layer 0
+     * /  \
+     * 2   3   layer 1
+     * /\  /\
      * 3 5 6 7   layer 2
      */
     @Before
@@ -40,7 +40,7 @@ public class TreeTraversingTest {
     }
 
     @Test
-    public void testGetDFS()  {
+    public void testGetDFS() {
         assertArrayEquals(treeTraversing.getDFS().toArray(), Arrays.asList(1, 2, 3, 5, 3, 6, 7).toArray());
     }
 }
