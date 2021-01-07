@@ -29,7 +29,6 @@ public class SymmetricTree {
         while (!leftNodes.isEmpty() && !rightNodes.isEmpty()) {
             TreeNode left = leftNodes.pop();
             TreeNode right = rightNodes.pop();
-//            System.out.println("left->" + left + ",right->" + right);
             if (left == null && right == null) {
                 continue;
             }
@@ -40,8 +39,6 @@ public class SymmetricTree {
             leftNodes.push(left.right);
             rightNodes.push(right.right);
             rightNodes.push(right.left);
-//            System.out.println("leftNodes->" + Arrays.toString(leftNodes.toArray()) +
-//                    ",rightNodes->" + Arrays.toString(rightNodes.toArray()));
         }
         return true;
     }
