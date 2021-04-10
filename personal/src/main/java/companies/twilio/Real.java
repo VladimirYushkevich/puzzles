@@ -15,9 +15,9 @@ public class Real {
             frequencies.put(elem, ++frequency);
         }
 
-        final List<Map.Entry<Integer, Integer>> entries = new ArrayList(frequencies.entrySet());
+        final List<Map.Entry<Integer, Integer>> entries = new ArrayList<>(frequencies.entrySet());
 
-        Collections.sort(entries, Comparator.comparingInt((ToIntFunction<Map.Entry<Integer, Integer>>) Map.Entry::getValue)
+        entries.sort(Comparator.comparingInt((ToIntFunction<Map.Entry<Integer, Integer>>) Map.Entry::getValue)
                 .thenComparingInt(Map.Entry::getKey));
 
         return entries.stream()
@@ -49,22 +49,6 @@ public class Real {
         return res;
     }
 
-    static int numberOfDivisibleSubsequencesQuadratic(List<Integer> input, int k) {
-        int res = 0;
-
-        for (int i = 0; i < input.size(); i++) {
-            int sum = 0;
-            for (int j = i; j < input.size(); j++) {
-                sum += input.get(j);
-                if (sum % k == 0) {
-                    res++;
-                }
-            }
-        }
-
-        return res;
-    }
-
     /**
      * https://www.geeksforgeeks.org/count-sub-arrays-sum-divisible-k/
      * <p>
@@ -89,7 +73,7 @@ public class Real {
      */
     static int numberOfDivisibleSubsequencesOptimal(List<Integer> input, int k) {
         // create auxiliary hash array to count frequency of remainders
-        int mod[] = new int[k];
+        int[] mod = new int[k];
         Arrays.fill(mod, 0);
 
         // Traverse original array and compute cumulative
@@ -97,8 +81,8 @@ public class Real {
         // sum and increase count by 1 for this remainder
         // in mod[] array
         int sum = 0;
-        for (int i = 0; i < input.size(); i++) {
-            sum += input.get(i);
+        for (Integer integer : input) {
+            sum += integer;
 
             // as the sum can be negative, taking modulo twice
             int index = ((sum % k) + k) % k;
