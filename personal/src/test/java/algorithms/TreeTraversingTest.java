@@ -12,9 +12,9 @@ public class TreeTraversingTest {
     private TreeTraversing treeTraversing;
 
     /**
-     * 1    layer 0
-     * /  \
-     * 2   3   layer 1
+     *    1    layer 0
+     *  /  \
+     *  2   3   layer 1
      * /\  /\
      * 3 5 6 7   layer 2
      */
