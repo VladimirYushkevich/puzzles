@@ -1,8 +1,9 @@
 dependencies {
-    compile 'org.hibernate:hibernate-validator:6.0.13.Final'
-    compile 'javax.el:javax.el-api:3.0.0'
-    compile 'org.glassfish.web:javax.el:2.2.4'
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    implementation 'jakarta.el:jakarta.el-api:5.0.0'
+    implementation 'org.glassfish.expressly:expressly:5.0.0'
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-all:1.10.19'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.8.0'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
 }
