@@ -41,10 +41,10 @@ public class SumOfTwoElements {
   public static boolean isTheSumExistingLinear(int[] sortedIn, int sum) {
     Set<Integer> complements = new HashSet<>();
     for (int value : sortedIn) {
-      if (complements.contains(value)) {
+      if (complements.contains(sum - value)) {
         return true;
       }
-      complements.add(sum - value);
+      complements.add(value);
     }
 
     return false;
